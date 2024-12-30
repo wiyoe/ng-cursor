@@ -27,9 +27,12 @@
               }
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/@ckeditor/ckeditor5-build-classic/build/ckeditor.js"
+            ]
           },
           "configurations": {
             "production": {
