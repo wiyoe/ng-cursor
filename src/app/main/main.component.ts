@@ -42,6 +42,10 @@ export class MainComponent implements OnInit {
     statusFilter = '';
     filteredTasks: Task[] = [];
   
+    isCreateDialogOpen = false;
+    newTaskText = '';
+    newTaskCategory = '';
+  
     constructor(public router: Router) {
       // Load tasks when component initializes
       this.loadTasks();
@@ -62,7 +66,6 @@ export class MainComponent implements OnInit {
     addTask(text: string, category: string) {
       const trimmedText = text.trim();
       if (!trimmedText) {
-        alert('Please enter a task');
         return;
       }
       if (trimmedText.length < 3) {
@@ -166,5 +169,24 @@ export class MainComponent implements OnInit {
     ngOnInit() {
       this.loadTasks();
       this.filteredTasks = [...this.tasks];
+    }
+  
+    openCreateTaskDialog() {
+      this.isCreateDialogOpen = true;
+      this.newTaskText = '';
+      this.newTaskCategory = '';
+    }
+  
+    closeCreateTaskDialog() {
+      this.isCreateDialogOpen = false;
+      this.newTaskText = '';
+      this.newTaskCategory = '';
+    }
+  
+    createTask() {
+      if (this.newTaskText?.trim()) {
+        this.addTask(this.newTaskText, this.newTaskCategory);
+        this.closeCreateTaskDialog();
+      }
     }
 } 

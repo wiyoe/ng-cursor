@@ -1,37 +1,18 @@
 <div>
     <!-- Only show todo-container when not on features page -->
-  <div class="todo-container" *ngIf="!router.url.includes('features')">
-    <h2>Todo List</h2>
-
-    <!-- Task Creation Section - Desktop -->
-    <div class="row mb-4">
-      <div class="col-12 col-md-8 d-none d-md-block">
-        <div class="input-group">
-          <input type="text" class="form-control" placeholder="Add new task..." #newTask>
-          <select class="form-select" style="min-width: 180px;" #category>
-            <option value="">Select Category</option>
-            <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
-          </select>
-          <button class="btn btn-primary" (click)="addTask(newTask.value, category.value); newTask.value=''; category.value=''">
-            <i class="bi bi-plus-lg me-1"></i>Add
-          </button>
+  <div class="todo-container">
+    <!-- Page Header -->
+    <div class="page-header mb-4">
+      <div class="d-flex justify-content-between align-items-center">
+        <div>
+          <h2 class="mb-1">Task List</h2>
+          <p class="text-muted mb-0">
+            Manage and organize your tasks efficiently
+          </p>
         </div>
-      </div>
-
-      <!-- Task Creation Section - Mobile -->
-      <div class="col-12 d-md-none">
-        <div class="mb-3">
-          <input type="text" class="form-control mb-2" placeholder="Add new task..." #newTaskMobile>
-          <div class="d-flex gap-2">
-            <select class="form-select" #categoryMobile>
-              <option value="">Select Category</option>
-              <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
-            </select>
-            <button class="btn btn-primary" (click)="addTask(newTaskMobile.value, categoryMobile.value); newTaskMobile.value=''; categoryMobile.value=''">
-              <i class="bi bi-plus-lg"></i>
-            </button>
-          </div>
-        </div>
+        <button class="btn btn-primary" (click)="openCreateTaskDialog()">
+          <i class="bi bi-plus-lg me-2"></i>Add New Task
+        </button>
       </div>
     </div>
 
@@ -243,6 +224,50 @@
       </div>
       <div class="toast-body">
         Task has been successfully deleted.
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Add Create Task Dialog -->
+  <div class="modal" [class.show]="isCreateDialogOpen" [style.display]="isCreateDialogOpen ? 'block' : 'none'">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Create New Task</h5>
+          <button type="button" class="btn-close" (click)="closeCreateTaskDialog()"></button>
+        </div>
+        <div class="modal-body">
+          <div class="mb-3">
+            <label class="form-label">Task Description</label>
+            <input 
+              type="text" 
+              class="form-control" 
+              placeholder="Enter task description..."
+              [(ngModel)]="newTaskText"
+              (keyup.enter)="createTask()"
+            >
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Category</label>
+            <select class="form-select" [(ngModel)]="newTaskCategory">
+              <option value="">Select Category</option>
+              <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="closeCreateTaskDialog()">Cancel</button>
+          <button 
+            type="button" 
+            class="btn btn-primary" 
+            (click)="createTask()"
+            [disabled]="!newTaskText?.trim()"
+          >
+            Create Task
+          </button>
+        </div>
       </div>
     </div>
   </div>
