@@ -62,7 +62,7 @@
             <td>
               <span class="badge-category badge-{{ task.category }}">{{ task.category }}</span>
             </td>
-            <td>{{ task.createdAt | date:'yyyy-MM-dd HH:mm:ss' }}</td>
+            <td>{{ task.createdAt | date:'dd-MM-yyyy HH:mm:ss' }}</td>
             <td>{{ task.createdBy }}</td>
             <td class="text-end">
               <button class="btn btn-primary btn-sm me-2" (click)="startEdit(task, i)">
@@ -98,7 +98,7 @@
                   <span class="badge-category badge-{{ task.category }}">{{ task.category }}</span>
                 </div>
                 <div class="text-muted">
-                  <div><strong>Created:</strong> {{ task.createdAt | date:'short' }}</div>
+                  <div><strong>Created:</strong> {{ task.createdAt | date:'dd-MM-yyyy HH:mm:ss' }}</div>
                   <div><strong>By:</strong> {{ task.createdBy }}</div>
                 </div>
               </div>
