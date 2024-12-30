@@ -42,6 +42,8 @@
 }
 
 .table {
+  table-layout: fixed;
+  width: 100%;
   border-collapse: separate;
   border-spacing: 0;
   border-radius: 8px;
@@ -227,4 +229,42 @@ header .bi-check2-square {
   .footer .social-links {
     margin-bottom: 1rem;
   }
+}
+
+/* Column widths */
+.table th:nth-child(1),
+.table td:nth-child(1) {
+  width: 30%;
+}
+
+.table th:nth-child(2),
+.table td:nth-child(2) {
+  width: 10%;
+}
+
+.table th:nth-child(3),
+.table td:nth-child(3) {
+  width: 15%;
+}
+
+.table th:nth-child(4),
+.table td:nth-child(4) {
+  width: 20%;
+}
+
+.table th:nth-child(5),
+.table td:nth-child(5) {
+  width: 10%;
+}
+
+.table th:nth-child(6),
+.table td:nth-child(6) {
+  width: 15%;
+}
+
+/* Text overflow for task name */
+.table td:first-child {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

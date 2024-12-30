@@ -50,7 +50,10 @@
             <td colspan="6" class="text-center">No tasks yet. Add a task to get started!</td>
           </tr>
           <tr *ngFor="let task of tasks; let i = index">
-            <td [class.text-decoration-line-through]="task.completed">{{ task.text }}</td>
+            <td [class.text-decoration-line-through]="task.completed" 
+                [title]="task.text">
+              {{ task.text }}
+            </td>
             <td class="text-center">
               <div class="form-check d-inline-block">
                 <input class="form-check-input" type="checkbox" [checked]="task.completed" (change)="toggleTask(i)">
