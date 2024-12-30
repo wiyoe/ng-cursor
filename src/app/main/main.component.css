@@ -1,1 +1,230 @@
-/* Add styles here */ 
+/* Add styles here */ .flex-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px;
+}
+
+.block {
+  flex: 1;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.table tbody tr {
+  transition: background-color 0.2s;
+}
+
+.table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.table td {
+  vertical-align: middle;
+}
+
+.text-decoration-line-through {
+  color: #6c757d;
+}
+
+.table thead {
+  background-color: #e9ecef;
+}
+
+.table thead th {
+  padding: 15px;
+  font-weight: 600;
+  border-bottom: 2px solid #dee2e6;
+  background-color: #e9ecef;
+  color: #495057;
+}
+
+.table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 8px;
+  border: 1px solid #dee2e6;
+}
+
+.table th:first-child {
+  border-top-left-radius: 8px;
+}
+
+.table th:last-child {
+  border-top-right-radius: 8px;
+}
+
+.table tr:last-child td:first-child {
+  border-bottom-left-radius: 8px;
+}
+
+.table tr:last-child td:last-child {
+  border-bottom-right-radius: 8px;
+}
+
+.btn-danger {
+  padding: 0.25rem 0.5rem;
+}
+
+.btn-danger i {
+  font-size: 1rem;
+}
+
+header {
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+header .bi-check2-square {
+  color: #0d6efd;
+}
+
+.container {
+  padding-top: 1rem;
+}
+
+.table th.text-center,
+.table td.text-center {
+  text-align: center;
+}
+
+.form-check.d-inline-block {
+  margin: 0;
+}
+
+.form-check-input {
+  cursor: pointer;
+}
+
+.form-check-input:hover {
+  border-color: #0d6efd;  /* Bootstrap primary color */
+}
+
+.modal.show {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1050;
+}
+
+.toast-container {
+  z-index: 1100;
+}
+
+.toast.show {
+  opacity: 1;
+  display: block;
+}
+
+.toast {
+  opacity: 0;
+  display: none;
+  transition: opacity 0.15s linear;
+}
+
+.card {
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.card .form-check-input {
+  margin-top: 0;
+}
+
+@media (max-width: 767.98px) {
+  .todo-container {
+    padding: 0 10px;
+  }
+  
+  .form-select {
+    flex: 1;
+  }
+  
+  .btn-primary {
+    width: 48px;  /* Make add button square */
+  }
+}
+
+/* Category badge styles */
+.badge-category {
+  padding: 0.4em 0.7em;
+  font-weight: 500;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.badge-Work {
+  background-color: #cfe2ff;
+  color: #084298;
+}
+
+.badge-Personal {
+  background-color: #d1e7dd;
+  color: #0a3622;
+}
+
+.badge-Shopping {
+  background-color: #fff3cd;
+  color: #664d03;
+}
+
+.badge-Health {
+  background-color: #f8d7da;
+  color: #842029;
+}
+
+.badge-Other {
+  background-color: #e2e3e5;
+  color: #41464b;
+}
+
+.footer {
+  background-color: #f8f9fa;
+  border-top: 1px solid #dee2e6;
+}
+
+.footer h5 {
+  color: #212529;
+  font-weight: 600;
+}
+
+.footer .social-links a {
+  font-size: 1.25rem;
+  transition: color 0.2s;
+}
+
+.footer .social-links a:hover {
+  color: #0d6efd !important;
+}
+
+.footer address p {
+  font-style: normal;
+}
+
+.footer ul li a:hover {
+  color: #0d6efd !important;
+}
+
+@media (max-width: 767.98px) {
+  .footer {
+    text-align: center;
+  }
+  
+  .footer .social-links {
+    margin-bottom: 1rem;
+  }
+}

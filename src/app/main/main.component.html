@@ -1,3 +1,190 @@
-<div class="container">
-  <h1>Welcome to Task Manager</h1>
-</div> 
+<div>
+    <!-- Only show todo-container when not on features page -->
+  <div class="todo-container" *ngIf="!router.url.includes('features')">
+    <h2>Todo List</h2>
+    <div class="row">
+      <!-- Desktop view -->
+      <div class="col-12 col-md-8 d-none d-md-block">
+        <div class="input-group mb-3">
+          <input type="text" class="form-control" placeholder="Add new task..." #newTask>
+          <select class="form-select" style="min-width: 180px;" #category>
+            <option value="">Select Category</option>
+            <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+          </select>
+          <button class="btn btn-primary" (click)="addTask(newTask.value, category.value); newTask.value=''; category.value=''">
+            <i class="bi bi-plus-lg me-1"></i>Add
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile view -->
+      <div class="col-12 d-md-none">
+        <div class="mb-3">
+          <input type="text" class="form-control mb-2" placeholder="Add new task..." #newTaskMobile>
+          <div class="d-flex gap-2">
+            <select class="form-select" #categoryMobile>
+              <option value="">Select Category</option>
+              <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+            </select>
+            <button class="btn btn-primary" (click)="addTask(newTaskMobile.value, categoryMobile.value); newTaskMobile.value=''; categoryMobile.value=''">
+              <i class="bi bi-plus-lg"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="table-responsive d-none d-md-block">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Task</th>
+            <th class="text-center">Status</th>
+            <th>Category</th>
+            <th>Created</th>
+            <th>Created By</th>
+            <th class="text-end">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngIf="tasks.length === 0">
+            <td colspan="6" class="text-center">No tasks yet. Add a task to get started!</td>
+          </tr>
+          <tr *ngFor="let task of tasks; let i = index">
+            <td [class.text-decoration-line-through]="task.completed">{{ task.text }}</td>
+            <td class="text-center">
+              <div class="form-check d-inline-block">
+                <input class="form-check-input" type="checkbox" [checked]="task.completed" (change)="toggleTask(i)">
+              </div>
+            </td>
+            <td>
+              <span class="badge-category badge-{{ task.category }}">{{ task.category }}</span>
+            </td>
+            <td>{{ task.createdAt | date:'yyyy-MM-dd HH:mm:ss' }}</td>
+            <td>{{ task.createdBy }}</td>
+            <td class="text-end">
+              <button class="btn btn-primary btn-sm me-2" (click)="startEdit(task, i)">
+                <i class="bi bi-pencil me-1"></i>Edit
+              </button>
+              <button class="btn btn-danger btn-sm" (click)="startDelete(i)">
+                <i class="bi bi-trash me-1"></i>Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Mobile card view -->
+    <div class="d-md-none">
+      <div class="row">
+        <div class="col-12" *ngFor="let task of tasks; let i = index">
+          <div class="card mb-3">
+            <div class="card-body">
+              <div class="d-flex justify-content-between align-items-start mb-2">
+                <h6 class="card-title mb-0" [class.text-decoration-line-through]="task.completed">
+                  {{ task.text }}
+                </h6>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" 
+                    [checked]="task.completed" 
+                    (change)="toggleTask(i)">
+                </div>
+              </div>
+              <div class="card-text small mb-2">
+                <div class="mb-1">
+                  <span class="badge-category badge-{{ task.category }}">{{ task.category }}</span>
+                </div>
+                <div class="text-muted">
+                  <div><strong>Created:</strong> {{ task.createdAt | date:'short' }}</div>
+                  <div><strong>By:</strong> {{ task.createdBy }}</div>
+                </div>
+              </div>
+              <div class="d-flex gap-2">
+                <button class="btn btn-primary btn-sm" (click)="startEdit(task, i)">
+                  <i class="bi bi-pencil me-1"></i>Edit
+                </button>
+                <button class="btn btn-danger btn-sm" (click)="startDelete(i)">
+                  <i class="bi bi-trash me-1"></i>Delete
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- No tasks message -->
+        <div class="col-12" *ngIf="tasks.length === 0">
+          <div class="alert alert-info text-center">
+            No tasks yet. Add a task to get started!
+          </div>
+        </div>
+      </div>
+    </div>
+
+  
+  </div>
+
+
+  <!-- Add the edit dialog -->
+<div class="modal" [class.show]="editingTask" [style.display]="editingTask ? 'block' : 'none'">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Edit Task</h5>
+          <button type="button" class="btn-close" (click)="cancelEdit()"></button>
+        </div>
+        <div class="modal-body" *ngIf="editingTask">
+          <div class="mb-3">
+            <label class="form-label">Task</label>
+            <input type="text" class="form-control" [(ngModel)]="editingTask.text">
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Category</label>
+            <select class="form-select" [(ngModel)]="editingTask.category">
+              <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="cancelEdit()">Cancel</button>
+          <button type="button" class="btn btn-primary" (click)="saveEdit()">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Add delete confirmation modal -->
+  <div class="modal" [class.show]="deletingIndex !== -1" [style.display]="deletingIndex !== -1 ? 'block' : 'none'">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Confirm Delete</h5>
+          <button type="button" class="btn-close" (click)="cancelDelete()"></button>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to delete this task?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="cancelDelete()">Cancel</button>
+          <button type="button" class="btn btn-danger" (click)="confirmDelete()">
+            <i class="bi bi-trash me-1"></i>Delete
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Add toast container at the bottom of the page -->
+  <div class="toast-container position-fixed bottom-0 end-0 p-3">
+    <div class="toast" [class.show]="showToast" role="alert">
+      <div class="toast-header">
+        <i class="bi bi-check-circle-fill text-success me-2"></i>
+        <strong class="me-auto">Success</strong>
+        <button type="button" class="btn-close" (click)="hideToast()"></button>
+      </div>
+      <div class="toast-body">
+        Task has been successfully deleted.
+      </div>
+    </div>
+  </div>
+
+  
+</div>

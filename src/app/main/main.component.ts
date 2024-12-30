@@ -1,13 +1,137 @@
-import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Component } from '@angular/core';
+import { RouterOutlet, RouterLink, Router } from '@angular/router';
+import { NgFor, NgIf, DatePipe } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
+interface Task {
+  text: string;
+  completed: boolean;
+  createdAt: Date;
+  createdBy: string;
+  category: string;
+}
+
 
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [CommonModule],
+  imports: [NgFor, NgIf, FormsModule, DatePipe],
   templateUrl: './main.component.html',
   styleUrl: './main.component.css'
 })
 export class MainComponent {
+    title = 'ng-project';
 
+    tasks: Task[] = [];
+  
+    public editorData = '';
+  
+    private fakeUsers = ['Alice', 'Bob', 'Charlie', 'David', 'Eva'];
+  
+    categories = ['Work', 'Personal', 'Shopping', 'Health', 'Other'];
+  
+    editingTask: Task | null = null;
+    editingIndex: number = -1;
+    deletingIndex: number = -1;
+  
+    showToast = false;
+  
+    constructor(public router: Router) {
+      // Load tasks when component initializes
+      this.loadTasks();
+    }
+  
+    private saveTasks() {
+      localStorage.setItem('tasks', JSON.stringify(this.tasks));
+    }
+  
+    private loadTasks() {
+      const savedTasks = localStorage.getItem('tasks');
+      if (savedTasks) {
+        this.tasks = JSON.parse(savedTasks);
+      }
+    }
+  
+    addTask(text: string, category: string) {
+      const trimmedText = text.trim();
+      if (!trimmedText) {
+        alert('Please enter a task');
+        return;
+      }
+      if (trimmedText.length < 3) {
+        alert('Task must be at least 3 characters long');
+        return;
+      }
+      
+      const randomUser = this.fakeUsers[Math.floor(Math.random() * this.fakeUsers.length)];
+      
+      this.tasks.push({ 
+        text: trimmedText, 
+        completed: false,
+        createdAt: new Date(),
+        createdBy: randomUser,
+        category: category || 'Other'
+      });
+      this.saveTasks();
+    }
+  
+    toggleTask(index: number) {
+      this.tasks[index].completed = !this.tasks[index].completed;
+      this.saveTasks(); // Save after toggling
+    }
+  
+    deleteTask(index: number) {
+      if (confirm('Are you sure you want to delete this task?')) {
+        this.tasks.splice(index, 1);
+        this.saveTasks();
+      }
+    }
+  
+    onEditorChange(event: any) {
+      this.editorData = event;
+      // You can handle the editor content changes here
+    }
+  
+    startEdit(task: Task, index: number) {
+      this.editingTask = { ...task };  // Create a copy
+      this.editingIndex = index;
+    }
+  
+    saveEdit() {
+      if (this.editingTask && this.editingIndex >= 0) {
+        this.tasks[this.editingIndex] = this.editingTask;
+        this.saveTasks();
+        this.editingTask = null;
+        this.editingIndex = -1;
+      }
+    }
+  
+    cancelEdit() {
+      this.editingTask = null;
+      this.editingIndex = -1;
+    }
+  
+    startDelete(index: number) {
+      this.deletingIndex = index;
+    }
+  
+    cancelDelete() {
+      this.deletingIndex = -1;
+    }
+  
+    confirmDelete() {
+      if (this.deletingIndex !== -1) {
+        this.tasks.splice(this.deletingIndex, 1);
+        this.saveTasks();
+        this.deletingIndex = -1;
+        
+        this.showToast = true;
+        setTimeout(() => this.hideToast(), 3000);
+      }
+    }
+  
+    hideToast() {
+      this.showToast = false;
+    }
 } 
