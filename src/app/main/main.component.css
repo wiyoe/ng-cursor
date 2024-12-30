@@ -298,3 +298,23 @@ header .bi-check2-square {
   color: #6c757d !important;
 }
 
+.filters {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.input-group-text {
+  border: none;
+}
+
+.form-control, .form-select {
+  border-color: #dee2e6;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: #0d6efd;
+  box-shadow: none;
+}
+

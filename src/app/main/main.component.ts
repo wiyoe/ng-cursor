@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet, RouterLink, Router } from '@angular/router';
 import { NgFor, NgIf, DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -20,7 +20,7 @@ interface Task {
   templateUrl: './main.component.html',
   styleUrl: './main.component.css'
 })
-export class MainComponent {
+export class MainComponent implements OnInit {
     title = 'ng-project';
 
     tasks: Task[] = [];
@@ -37,6 +37,11 @@ export class MainComponent {
   
     showToast = false;
   
+    searchTerm = '';
+    categoryFilter = '';
+    statusFilter = '';
+    filteredTasks: Task[] = [];
+  
     constructor(public router: Router) {
       // Load tasks when component initializes
       this.loadTasks();
@@ -50,6 +55,7 @@ export class MainComponent {
       const savedTasks = localStorage.getItem('tasks');
       if (savedTasks) {
         this.tasks = JSON.parse(savedTasks);
+        this.filteredTasks = [...this.tasks];
       }
     }
   
@@ -66,14 +72,16 @@ export class MainComponent {
       
       const randomUser = this.fakeUsers[Math.floor(Math.random() * this.fakeUsers.length)];
       
-      this.tasks.push({ 
+      const newTask = { 
         text: trimmedText, 
         completed: false,
         createdAt: new Date(),
         createdBy: randomUser,
         category: category || 'Other'
-      });
+      };
+      this.tasks.push(newTask);
       this.saveTasks();
+      this.filterTasks();
     }
   
     toggleTask(index: number) {
@@ -85,6 +93,7 @@ export class MainComponent {
       if (confirm('Are you sure you want to delete this task?')) {
         this.tasks.splice(index, 1);
         this.saveTasks();
+        this.filterTasks();
       }
     }
   
@@ -133,5 +142,29 @@ export class MainComponent {
   
     hideToast() {
       this.showToast = false;
+    }
+  
+    filterTasks() {
+      this.filteredTasks = this.tasks.filter(task => {
+        const matchesSearch = task.text.toLowerCase().includes(this.searchTerm.toLowerCase());
+        const matchesCategory = !this.categoryFilter || task.category === this.categoryFilter;
+        const matchesStatus = !this.statusFilter || 
+          (this.statusFilter === 'completed' && task.completed) ||
+          (this.statusFilter === 'active' && !task.completed);
+        
+        return matchesSearch && matchesCategory && matchesStatus;
+      });
+    }
+  
+    resetFilters() {
+      this.searchTerm = '';
+      this.categoryFilter = '';
+      this.statusFilter = '';
+      this.filterTasks();
+    }
+  
+    ngOnInit() {
+      this.loadTasks();
+      this.filteredTasks = [...this.tasks];
     }
 } 

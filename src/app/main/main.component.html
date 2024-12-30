@@ -2,10 +2,11 @@
     <!-- Only show todo-container when not on features page -->
   <div class="todo-container" *ngIf="!router.url.includes('features')">
     <h2>Todo List</h2>
-    <div class="row">
-      <!-- Desktop view -->
+
+    <!-- Task Creation Section - Desktop -->
+    <div class="row mb-4">
       <div class="col-12 col-md-8 d-none d-md-block">
-        <div class="input-group mb-3">
+        <div class="input-group">
           <input type="text" class="form-control" placeholder="Add new task..." #newTask>
           <select class="form-select" style="min-width: 180px;" #category>
             <option value="">Select Category</option>
@@ -17,7 +18,7 @@
         </div>
       </div>
 
-      <!-- Mobile view -->
+      <!-- Task Creation Section - Mobile -->
       <div class="col-12 d-md-none">
         <div class="mb-3">
           <input type="text" class="form-control mb-2" placeholder="Add new task..." #newTaskMobile>
@@ -33,6 +34,63 @@
         </div>
       </div>
     </div>
+
+    <!-- Filters Section -->
+    <div class="filters mb-4">
+        <div class="row g-3">
+          <div class="col-md-4">
+            <div class="input-group">
+              <span class="input-group-text bg-light">
+                <i class="bi bi-search"></i>
+              </span>
+              <input 
+                type="text" 
+                class="form-control" 
+                placeholder="Search tasks..."
+                [(ngModel)]="searchTerm"
+                (input)="filterTasks()"
+              >
+            </div>
+          </div>
+          
+          <div class="col-md-3">
+            <select 
+              class="form-select" 
+              [(ngModel)]="categoryFilter"
+              (change)="filterTasks()"
+            >
+              <option value="">All Categories</option>
+              <option value="Work">Work</option>
+              <option value="Personal">Personal</option>
+              <option value="Shopping">Shopping</option>
+              <option value="Others">Others</option>
+            </select>
+          </div>
+          
+          <div class="col-md-3">
+            <select 
+              class="form-select" 
+              [(ngModel)]="statusFilter"
+              (change)="filterTasks()"
+            >
+              <option value="">All Status</option>
+              <option value="completed">Completed</option>
+              <option value="active">Active</option>
+            </select>
+          </div>
+          
+          <div class="col-md-2">
+            <button 
+              class="btn btn-outline-secondary w-100"
+              (click)="resetFilters()"
+            >
+              <i class="bi bi-x-circle me-1"></i>Reset
+            </button>
+          </div>
+        </div>
+      </div>
+
+    <!-- Table Section -->
     <div class="table-responsive d-none d-md-block">
       <table class="table">
         <thead>
@@ -46,10 +104,10 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngIf="tasks.length === 0">
-            <td colspan="6" class="text-center">No tasks yet. Add a task to get started!</td>
+          <tr *ngIf="filteredTasks.length === 0">
+            <td colspan="6" class="text-center">No tasks found.</td>
           </tr>
-          <tr *ngFor="let task of tasks; let i = index">
+          <tr *ngFor="let task of filteredTasks; let i = index">
             <td [class.text-decoration-line-through]="task.completed" 
                 [title]="task.text">
               {{ task.text }}
@@ -80,7 +138,7 @@
     <!-- Mobile card view -->
     <div class="d-md-none">
       <div class="row">
-        <div class="col-12" *ngFor="let task of tasks; let i = index">
+        <div class="col-12" *ngFor="let task of filteredTasks; let i = index">
           <div class="card mb-3">
             <div class="card-body">
               <div class="d-flex justify-content-between align-items-start mb-2">
@@ -114,9 +172,9 @@
           </div>
         </div>
         <!-- No tasks message -->
-        <div class="col-12" *ngIf="tasks.length === 0">
+        <div class="col-12" *ngIf="filteredTasks.length === 0">
           <div class="alert alert-info text-center">
-            No tasks yet. Add a task to get started!
+            No tasks found.
           </div>
         </div>
       </div>
@@ -189,5 +247,4 @@
     </div>
   </div>
 
-  
 </div>
