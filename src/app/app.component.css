@@ -29,3 +29,36 @@ header {
   padding: 0.5rem 1.25rem;
   border-radius: 8px;
 }
+
+.navbar-toggler {
+  border: none;
+  background: transparent;
+  padding: 0.5rem;
+  color: #6c757d;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+.mobile-nav {
+  display: none;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  border-top: 1px solid #dee2e6;
+}
+
+.mobile-nav.show {
+  display: block;
+}
+
+@media (max-width: 767.98px) {
+  .brand-text {
+    font-size: 1.1rem;
+  }
+  
+  .nav-link {
+    display: block;
+    padding: 0.5rem 0;
+  }
+}
