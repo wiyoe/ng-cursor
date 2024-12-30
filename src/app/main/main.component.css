@@ -26,7 +26,7 @@
 }
 
 .text-decoration-line-through {
-  color: #6c757d;
+  color: #6c757d !important;
 }
 
 .table thead {
@@ -268,3 +268,33 @@ header .bi-check2-square {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+/* Task name color */
+.table td:first-child {
+  color: #084298;
+}
+
+/* Mobile view task title */
+.card-title {
+  color: #084298;
+}
+
+/* Task name colors */
+.table td:first-child {
+  color: #084298;  /* Dark blue for active tasks */
+}
+
+/* Completed task color */
+.text-decoration-line-through {
+  color: #6c757d !important;
+}
+
+/* Mobile view task colors */
+.card-title {
+  color: #084298;  /* Dark blue for active tasks */
+}
+
+.card-title.text-decoration-line-through {
+  color: #6c757d !important;
+}
+
