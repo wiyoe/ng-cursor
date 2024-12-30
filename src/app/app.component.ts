@@ -19,6 +19,7 @@ interface Task {
 })
 export class AppComponent {
   isMenuOpen = false;
+  currentYear = new Date().getFullYear();
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
