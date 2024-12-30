@@ -1,59 +1,82 @@
-# NgProject
+# Task Manager
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.6.
+A modern task management application built with Angular, featuring an intuitive interface for organizing and tracking tasks efficiently.
 
-## Development server
+## Overview
 
-To start a local development server, run:
+This project was developed using [Cursor AI](https://cursor.sh/), an AI-powered development tool that enhances the coding workflow through intelligent suggestions and pair programming capabilities.
 
+## Features
+
+- Task creation and management
+- Category-based organization
+- Status tracking and filtering
+- Real-time search functionality
+- Responsive design (mobile/desktop)
+- Modern UI with Bootstrap 5
+- Local storage persistence
+- Dynamic task filtering
+
+## Tech Stack
+
+- Angular 17
+- TypeScript
+- Bootstrap 5
+- Bootstrap Icons
+- HTML5/CSS3
+
+## Getting Started
+
+1. Clone the repository
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+4. Open your browser and navigate to `http://localhost:4200/`
 
-## Code scaffolding
+## Development Tools
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
+- [Angular CLI](https://github.com/angular/angular-cli) version 17
+- [Cursor AI](https://cursor.sh/) for enhanced development
+- Visual Studio Code
 
 ## Building
 
-To build the project run:
+To create a production build:
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Build artifacts will be stored in the `dist/` directory.
 
-## Running unit tests
+## Testing
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
+Run unit tests:
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+## Project Structure
 
-For end-to-end (e2e) testing, run:
+- `src/app/main` - Task management functionality
+- `src/app/branding` - Landing page
+- `src/app/faq` - FAQ section
+- `src/assets` - Static assets and SVGs
 
-```bash
-ng e2e
-```
+## Contributing
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Contributions are welcome! Please feel free to submit issues and pull requests.
 
-## Additional Resources
+## License
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+This project is licensed under the MIT License.
+
+---
+Built with ❤️ using [Cursor AI](https://cursor.sh/)
