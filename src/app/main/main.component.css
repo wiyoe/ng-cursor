@@ -351,3 +351,24 @@ header .bi-check2-square {
   }
 }
 
+/* Completed task row styles */
+.table > tbody > tr.completed {
+  background: #d1e7dd;
+}
+
+.table > tbody > tr.completed:hover {
+  background: #c3dfd4;
+}
+
+/* Reset text color for completed tasks */
+.table > tbody > tr.completed td,
+.table > tbody > tr.completed td:first-child {
+  color: inherit;
+}
+
+/* Mobile card styles */
+.card.completed {
+  background: #d1e7dd;
+  border-color: #badbcc;
+}
+

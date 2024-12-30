@@ -88,7 +88,8 @@
           <tr *ngIf="filteredTasks.length === 0">
             <td colspan="6" class="text-center">No tasks found.</td>
           </tr>
-          <tr *ngFor="let task of filteredTasks; let i = index">
+          <tr *ngFor="let task of filteredTasks; let i = index" 
+              [class.completed]="task.completed">
             <td [class.text-decoration-line-through]="task.completed" 
                 [title]="task.text">
               {{ task.text }}
@@ -120,7 +121,7 @@
     <div class="d-md-none">
       <div class="row">
         <div class="col-12" *ngFor="let task of filteredTasks; let i = index">
-          <div class="card mb-3">
+          <div class="card mb-3" [class.completed]="task.completed">
             <div class="card-body">
               <div class="d-flex justify-content-between align-items-start mb-2">
                 <h6 class="card-title mb-0" [class.text-decoration-line-through]="task.completed">
@@ -263,7 +264,7 @@
             type="button" 
             class="btn btn-primary" 
             (click)="createTask()"
-            [disabled]="!newTaskText?.trim()"
+            [disabled]="!newTaskText.trim()"
           >
             Create Task
           </button>
