@@ -224,5 +224,10 @@
         }
       }
     }
+  },
+  "common": {
+    "buttons": {
+      "cancel": "İptal"
+    }
   }
 } 
