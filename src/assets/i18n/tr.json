@@ -137,5 +137,22 @@
     "education": "Eğitim",
     "finance": "Finans",
     "family": "Aile"
+  },
+  "faq": {
+    "title": "Sıkça Sorulan Sorular",
+    "questions": {
+      "q1": {
+        "question": "Yeni görev nasıl oluşturabilirim?",
+        "answer": "'Yeni Görev Ekle' düğmesine tıklayın, görev detaylarını girin, kategori seçin ve 'Görev Oluştur'a tıklayın."
+      },
+      "q2": {
+        "question": "Görevleri düzenleyebilir veya silebilir miyim?",
+        "answer": "Evet, her görevin düzenleme ve silme düğmeleri vardır. Görev detaylarını değiştirmek için düzenle, silmek için sil düğmesine tıklayın."
+      },
+      "q3": {
+        "question": "Görevlerim kaydediliyor mu?",
+        "answer": "Evet, görevleriniz otomatik olarak tarayıcınızın yerel depolama alanına kaydedilir. Tarayıcıyı kapatıp yeniden açsanız bile kalıcı olurlar."
+      }
+    }
   }
 } 

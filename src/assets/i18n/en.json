@@ -137,5 +137,22 @@
     "education": "Education",
     "finance": "Finance",
     "family": "Family"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "questions": {
+      "q1": {
+        "question": "How do I create a new task?",
+        "answer": "Click the 'Add New Task' button, enter task details, select a category, and click 'Create Task'."
+      },
+      "q2": {
+        "question": "Can I edit or delete tasks?",
+        "answer": "Yes, each task has edit and delete buttons. Click edit to modify task details or delete to remove it."
+      },
+      "q3": {
+        "question": "Are my tasks saved?",
+        "answer": "Yes, your tasks are automatically saved in your browser's local storage. They will persist even if you close and reopen the browser."
+      }
+    }
   }
 } 
