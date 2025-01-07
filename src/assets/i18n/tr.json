@@ -154,5 +154,75 @@
         "answer": "Evet, görevleriniz otomatik olarak tarayıcınızın yerel depolama alanına kaydedilir. Tarayıcıyı kapatıp yeniden açsanız bile kalıcı olurlar."
       }
     }
+  },
+  "privacy": {
+    "title": "Gizlilik Politikası",
+    "sections": {
+      "collect": {
+        "title": "1. Topladığımız Bilgiler",
+        "description": "Görev Yöneticisi'ni kullanırken doğrudan bize sağladığınız bilgileri topluyoruz:",
+        "items": [
+          "Görev açıklamaları ve kategorileri",
+          "Kullanım verileri ve tercihler",
+          "Cihaz bilgileri ve tarayıcı türü",
+          "Yerel depolama verileri"
+        ]
+      },
+      "use": {
+        "title": "2. Bilgileri Nasıl Kullanıyoruz",
+        "description": "Toplanan bilgileri şu amaçlarla kullanıyoruz:",
+        "items": [
+          "Hizmeti sağlamak ve sürdürmek",
+          "Kullanıcı deneyimini iyileştirmek",
+          "Kullanım modellerini analiz etmek",
+          "Teknik sorunları tespit etmek ve önlemek"
+        ]
+      },
+      "security": {
+        "title": "3. Veri Güvenliği",
+        "description": "Bilgilerinizi korumak için uygun güvenlik önlemlerini uyguluyoruz. Veriler cihazınızda yerel olarak depolanır."
+      },
+      "contact": {
+        "title": "4. Bize Ulaşın",
+        "description": "Bu Gizlilik Politikası hakkında sorularınız varsa, lütfen bizimle iletişime geçin:",
+        "email": "info@taskmanager.com"
+      }
+    }
+  },
+  "contact": {
+    "title": "İletişim",
+    "sections": {
+      "map": {
+        "title": "Bizi Bulun"
+      },
+      "form": {
+        "title": "Mesaj Gönderin",
+        "name": "Adınız",
+        "email": "E-posta Adresi",
+        "subject": "Konu",
+        "message": "Mesaj",
+        "send": "Mesaj Gönder"
+      },
+      "info": {
+        "title": "İletişim Bilgileri",
+        "address": {
+          "title": "Adres",
+          "value": "123 Task Sokak"
+        },
+        "email": {
+          "title": "E-posta",
+          "value": "info@taskmanager.com"
+        },
+        "phone": {
+          "title": "Telefon",
+          "value": "(555) 123-4567"
+        },
+        "hours": {
+          "title": "Çalışma Saatleri",
+          "weekdays": "Pazartesi - Cuma: 09:00 - 17:00",
+          "weekend": "Cumartesi & Pazar: Kapalı"
+        }
+      }
+    }
   }
 } 

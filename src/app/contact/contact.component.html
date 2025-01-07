@@ -1,10 +1,10 @@
 <div class="container py-5">
-  <h1 class="mb-4">Contact Us</h1>
+  <h1 class="mb-4">{{ 'contact.title' | translate }}</h1>
   
   <!-- Map Section -->
   <div class="row mb-5">
     <div class="col-12">
-      <h5 class="mb-4">Find Us</h5>
+      <h5 class="mb-4">{{ 'contact.sections.map.title' | translate }}</h5>
       <div class="map-container">
         <iframe 
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2624.9916256937595!2d2.2922926156740714!3d48.858370079287475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66e2964e34e2d%3A0x8ddca9ee380ef7e0!2sEiffel%20Tower!5e0!3m2!1sen!2sus!4v1647951865986!5w200!5h200"
@@ -18,56 +18,51 @@
     </div>
   </div>
 
-  <!-- Contact Form and Info -->
   <div class="row">
-    <div class="col-md-6">
-      <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+    <!-- Contact Form -->
+    <div class="col-md-8 mb-4">
+      <h5 class="mb-4">{{ 'contact.sections.form.title' | translate }}</h5>
+      <form>
         <div class="mb-3">
-          <label for="name" class="form-label">Name</label>
-          <input type="text" class="form-control" id="name" name="name" [(ngModel)]="formData.name" required>
+          <input type="text" class="form-control" [placeholder]="'contact.sections.form.name' | translate">
         </div>
-        
         <div class="mb-3">
-          <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control" id="email" name="email" [(ngModel)]="formData.email" required>
+          <input type="email" class="form-control" [placeholder]="'contact.sections.form.email' | translate">
         </div>
-        
         <div class="mb-3">
-          <label for="subject" class="form-label">Subject</label>
-          <input type="text" class="form-control" id="subject" name="subject" [(ngModel)]="formData.subject" required>
+          <input type="text" class="form-control" [placeholder]="'contact.sections.form.subject' | translate">
         </div>
-        
         <div class="mb-3">
-          <label for="message" class="form-label">Message</label>
-          <textarea class="form-control" id="message" name="message" rows="5" [(ngModel)]="formData.message" required></textarea>
+          <textarea class="form-control" rows="5" [placeholder]="'contact.sections.form.message' | translate"></textarea>
         </div>
-        
-        <button type="submit" class="btn btn-primary">Send Message</button>
+        <button type="submit" class="btn btn-primary">
+          {{ 'contact.sections.form.send' | translate }}
+        </button>
       </form>
     </div>
-    
-    <div class="col-md-6">
-      <div class="ps-md-5">
-        <h5 class="mb-4">Other Ways to Reach Us</h5>
-        
+
+    <!-- Contact Info -->
+    <div class="col-md-4">
+      <h5 class="mb-4">{{ 'contact.sections.info.title' | translate }}</h5>
+      <div class="contact-info">
         <div class="mb-4">
-          <h6><i class="bi bi-geo-alt me-2"></i>Address</h6>
-          <p class="text-muted">123 Task Street<br>City, State 12345</p>
+          <h6><i class="bi bi-geo-alt me-2"></i>{{ 'contact.sections.info.address.title' | translate }}</h6>
+          <p class="text-muted">{{ 'contact.sections.info.address.value' | translate }}</p>
         </div>
-        
         <div class="mb-4">
-          <h6><i class="bi bi-envelope me-2"></i>Email</h6>
-          <p class="text-muted">info&#64;taskmanager.com</p>
+          <h6><i class="bi bi-envelope me-2"></i>{{ 'contact.sections.info.email.title' | translate }}</h6>
+          <p class="text-muted">{{ 'contact.sections.info.email.value' | translate }}</p>
         </div>
-        
         <div class="mb-4">
-          <h6><i class="bi bi-telephone me-2"></i>Phone</h6>
-          <p class="text-muted">(555) 123-4567</p>
+          <h6><i class="bi bi-telephone me-2"></i>{{ 'contact.sections.info.phone.title' | translate }}</h6>
+          <p class="text-muted">{{ 'contact.sections.info.phone.value' | translate }}</p>
         </div>
-        
         <div>
-          <h6><i class="bi bi-clock me-2"></i>Business Hours</h6>
-          <p class="text-muted">Monday - Friday: 9:00 AM - 5:00 PM<br>Saturday & Sunday: Closed</p>
+          <h6><i class="bi bi-clock me-2"></i>{{ 'contact.sections.info.hours.title' | translate }}</h6>
+          <p class="text-muted">
+            {{ 'contact.sections.info.hours.weekdays' | translate }}<br>
+            {{ 'contact.sections.info.hours.weekend' | translate }}
+          </p>
         </div>
       </div>
     </div>

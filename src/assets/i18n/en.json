@@ -154,5 +154,75 @@
         "answer": "Yes, your tasks are automatically saved in your browser's local storage. They will persist even if you close and reopen the browser."
       }
     }
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "sections": {
+      "collect": {
+        "title": "1. Information We Collect",
+        "description": "We collect information you provide directly to us when using Task Manager, including:",
+        "items": [
+          "Task descriptions and categories",
+          "Usage data and preferences",
+          "Device information and browser type",
+          "Local storage data"
+        ]
+      },
+      "use": {
+        "title": "2. How We Use Information",
+        "description": "We use the collected information to:",
+        "items": [
+          "Provide and maintain the service",
+          "Improve user experience",
+          "Analyze usage patterns",
+          "Detect and prevent technical issues"
+        ]
+      },
+      "security": {
+        "title": "3. Data Security",
+        "description": "We implement appropriate security measures to protect your information. Data is stored locally on your device."
+      },
+      "contact": {
+        "title": "4. Contact Us",
+        "description": "If you have any questions about this Privacy Policy, please contact us at",
+        "email": "info@taskmanager.com"
+      }
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "sections": {
+      "map": {
+        "title": "Find Us"
+      },
+      "form": {
+        "title": "Send Message",
+        "name": "Your Name",
+        "email": "Email Address",
+        "subject": "Subject",
+        "message": "Message",
+        "send": "Send Message"
+      },
+      "info": {
+        "title": "Contact Information",
+        "address": {
+          "title": "Address",
+          "value": "123 Task Street"
+        },
+        "email": {
+          "title": "Email",
+          "value": "info@taskmanager.com"
+        },
+        "phone": {
+          "title": "Phone",
+          "value": "(555) 123-4567"
+        },
+        "hours": {
+          "title": "Business Hours",
+          "weekdays": "Monday - Friday: 9:00 AM - 5:00 PM",
+          "weekend": "Saturday & Sunday: Closed"
+        }
+      }
+    }
   }
 } 

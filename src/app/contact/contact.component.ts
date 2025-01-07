@@ -1,29 +1,11 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-contact',
   standalone: true,
-  imports: [FormsModule],
+  imports: [TranslateModule],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css'
 })
-export class ContactComponent {
-  formData = {
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  };
-
-  onSubmit() {
-    console.log('Form submitted:', this.formData);
-    alert('Message sent successfully!');
-    this.formData = {
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-    };
-  }
-} 
+export class ContactComponent {} 
