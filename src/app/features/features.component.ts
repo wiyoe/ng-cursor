@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { NgFor } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-features',
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor, TranslateModule],
   templateUrl: './features.component.html',
   styleUrl: './features.component.css'
 })
@@ -12,23 +13,19 @@ export class FeaturesComponent {
   features = [
     {
       icon: 'bi-list-check',
-      title: 'Task Management',
-      description: 'Create, edit, and organize your tasks efficiently'
+      key: 'taskManagement'
     },
     {
       icon: 'bi-tags',
-      title: 'Categories',
-      description: 'Categorize tasks for better organization'
+      key: 'categories'
     },
     {
       icon: 'bi-clock-history',
-      title: 'Task History',
-      description: 'Track task creation and completion times'
+      key: 'history'
     },
     {
       icon: 'bi-phone',
-      title: 'Mobile Friendly',
-      description: 'Access your tasks on any device'
+      key: 'mobile'
     }
   ];
 } 

@@ -3,39 +3,39 @@
     <div class="col-lg-6 mb-5 mb-lg-0">
       <div class="brand-content">
         <h1 class="display-4 fw-bold mb-4">
-          Organize Tasks<br>
-          <span class="text-primary">Boost Productivity</span>
+          {{ 'branding.title' | translate }}<br>
+          <span class="text-primary">{{ 'branding.subtitle' | translate }}</span>
         </h1>
         <p class="lead mb-4">
-          Streamline your workflow with our intuitive task management solution. Stay organized, meet deadlines, and achieve more.
+          {{ 'branding.description' | translate }}
         </p>
         <div class="features mb-4">
           <div class="feature">
             <i class="bi bi-check-circle-fill text-primary me-2"></i>
-            Simple and intuitive interface
+            {{ 'branding.features.interface' | translate }}
           </div>
           <div class="feature">
             <i class="bi bi-folder-fill text-primary me-2"></i>
-            Smart task categorization
+            {{ 'branding.features.categorization' | translate }}
           </div>
           <div class="feature">
             <i class="bi bi-clock-fill text-primary me-2"></i>
-            Real-time progress tracking
+            {{ 'branding.features.tracking' | translate }}
           </div>
         </div>
         <div class="cta-buttons">
           <a routerLink="/main" class="btn btn-primary btn-lg me-3">
-            Get Started
+            {{ 'branding.buttons.getStarted' | translate }}
           </a>
           <a routerLink="/features" class="btn btn-outline-primary btn-lg">
-            Learn More
+            {{ 'branding.buttons.learnMore' | translate }}
           </a>
         </div>
       </div>
     </div>
     <div class="col-lg-6">
       <div class="illustration-wrapper">
-        <img src="task-manager.svg" alt="Task Manager" class="img-fluid">
+        <img [src]="illustrationPath" alt="Task Manager" class="img-fluid">
       </div>
     </div>
   </div>

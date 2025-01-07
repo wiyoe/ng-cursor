@@ -1,0 +1,84 @@
+{
+  "taskManager": {
+    "title": "Görev Yöneticisi",
+    "taskList": "Görev Listesi",
+    "subTitle": "Görevlerinizi verimli bir şekilde yönetin ve organize edin",
+    "addNewTask": "Yeni Görev Ekle",
+    "search": "Görev ara...",
+    "allCategories": "Tüm Kategoriler",
+    "allStatus": "Tüm Durumlar",
+    "completed": "Tamamlandı",
+    "active": "Aktif",
+    "reset": "Sıfırla",
+    "task": "Görev",
+    "status": "Durum",
+    "category": "Kategori",
+    "created": "Oluşturulma",
+    "createdBy": "Oluşturan",
+    "actions": "İşlemler",
+    "edit": "Düzenle",
+    "delete": "Sil",
+    "noTasks": "Görev bulunamadı."
+  },
+  "branding": {
+    "title": "Görevleri Düzenleyin",
+    "subtitle": "Verimliliği Artırın",
+    "description": "İş akışınızı sezgisel görev yönetimi çözümümüzle kolaylaştırın. Organize olun, son teslim tarihlerini yakalayın ve daha fazlasın.",
+    "features": {
+      "interface": "Basit ve sezgisel arayüz",
+      "categorization": "Akıllı görev kategorizasyonu",
+      "tracking": "Gerçek zamanlı ilerleme takibi"
+    },
+    "buttons": {
+      "getStarted": "Başlayın",
+      "learnMore": "Daha Fazla"
+    }
+  },
+  "header": {
+    "features": "Özellikler",
+    "faq": "SSS"
+  },
+  "footer": {
+    "about": {
+      "title": "Görev Yöneticisi Hakkında",
+      "description": "Organize olmanıza ve verimliliğinizi artırmanıza yardımcı olan basit ama güçlü bir görev yönetimi çözümü."
+    },
+    "contact": {
+      "title": "İletişim",
+      "address": "123 Task Sokak",
+      "email": "info@taskmanager.com",
+      "phone": "(555) 123-4567"
+    },
+    "quickLinks": {
+      "title": "Hızlı Bağlantılar",
+      "home": "Ana Sayfa",
+      "features": "Özellikler",
+      "privacy": "Gizlilik Politikası",
+      "terms": "Kullanım Koşulları",
+      "contact": "İletişim",
+      "faq": "SSS"
+    },
+    "copyright": "Görev Yöneticisi. Tüm hakları saklıdır."
+  },
+  "features": {
+    "title": "Özellikler",
+    "items": {
+      "taskManagement": {
+        "title": "Görev Yönetimi",
+        "description": "Görevlerinizi verimli bir şekilde oluşturun, düzenleyin ve organize edin"
+      },
+      "categories": {
+        "title": "Kategoriler",
+        "description": "Daha iyi organizasyon için görevleri kategorilere ayırın"
+      },
+      "history": {
+        "title": "Görev Geçmişi",
+        "description": "Görev oluşturma ve tamamlama zamanlarını takip edin"
+      },
+      "mobile": {
+        "title": "Mobil Uyumlu",
+        "description": "Görevlerinize herhangi bir cihazdan erişin"
+      }
+    }
+  }
+} 

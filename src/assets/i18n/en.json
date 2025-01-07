@@ -1,0 +1,84 @@
+{
+  "taskManager": {
+    "title": "Task Manager",
+    "taskList": "Task List",
+    "subTitle": "Manage and organize your tasks efficiently",
+    "addNewTask": "Add New Task",
+    "search": "Search tasks...",
+    "allCategories": "All Categories",
+    "allStatus": "All Status",
+    "completed": "Completed",
+    "active": "Active",
+    "reset": "Reset",
+    "task": "Task",
+    "status": "Status",
+    "category": "Category",
+    "created": "Created",
+    "createdBy": "Created By",
+    "actions": "Actions",
+    "edit": "Edit",
+    "delete": "Delete",
+    "noTasks": "No tasks found."
+  },
+  "branding": {
+    "title": "Organize Tasks",
+    "subtitle": "Boost Productivity",
+    "description": "Streamline your workflow with our intuitive task management solution. Stay organized, meet deadlines, and achieve more.",
+    "features": {
+      "interface": "Simple and intuitive interface",
+      "categorization": "Smart task categorization",
+      "tracking": "Real-time progress tracking"
+    },
+    "buttons": {
+      "getStarted": "Get Started",
+      "learnMore": "Learn More"
+    }
+  },
+  "header": {
+    "features": "Features",
+    "faq": "FAQ"
+  },
+  "footer": {
+    "about": {
+      "title": "About Task Manager",
+      "description": "A simple yet powerful task management solution to help you stay organized and boost productivity."
+    },
+    "contact": {
+      "title": "Contact Us",
+      "address": "123 Task Street",
+      "email": "info@taskmanager.com",
+      "phone": "(555) 123-4567"
+    },
+    "quickLinks": {
+      "title": "Quick Links",
+      "home": "Home",
+      "features": "Features",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service",
+      "contact": "Contact Us",
+      "faq": "FAQ"
+    },
+    "copyright": "Task Manager. All rights reserved."
+  },
+  "features": {
+    "title": "Features",
+    "items": {
+      "taskManagement": {
+        "title": "Task Management",
+        "description": "Create, edit, and organize your tasks efficiently"
+      },
+      "categories": {
+        "title": "Categories",
+        "description": "Categorize tasks for better organization"
+      },
+      "history": {
+        "title": "Task History",
+        "description": "Track task creation and completion times"
+      },
+      "mobile": {
+        "title": "Mobile Friendly",
+        "description": "Access your tasks on any device"
+      }
+    }
+  }
+} 

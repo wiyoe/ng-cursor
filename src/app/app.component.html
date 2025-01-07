@@ -17,21 +17,23 @@
 
       <!-- Navigation -->
       <nav class="d-none d-md-flex align-items-center">
-        <a routerLink="/features" class="nav-link me-4">Features</a>
-        <a routerLink="/faq" class="nav-link me-4">FAQ</a>
-        <button class="btn btn-primary">
-          <i class="bi bi-person-circle me-2"></i>Login
-        </button>
+        <select class="form-select me-3" #langSelect (change)="switchLanguage(langSelect.value)">
+          <option value="tr">Türkçe</option>
+          <option value="en">English</option>
+        </select>
+        <a routerLink="/features" class="nav-link me-4">{{ 'header.features' | translate }}</a>
+        <a routerLink="/faq" class="nav-link me-4">{{ 'header.faq' | translate }}</a>
       </nav>
     </div>
 
     <!-- Mobile Navigation -->
     <div class="mobile-nav" [class.show]="isMenuOpen">
+      <select class="form-select mb-3" #langSelectMobile (change)="switchLanguage(langSelectMobile.value)">
+        <option value="tr">Türkçe</option>
+        <option value="en">English</option>
+      </select>
       <a routerLink="/features" class="nav-link mb-3">Features</a>
       <a routerLink="/faq" class="nav-link mb-3">FAQ</a>
-      <button class="btn btn-primary w-100">
-        <i class="bi bi-person-circle me-2"></i>Login
-      </button>
     </div>
   </div>
 </header>
@@ -46,9 +48,9 @@
     <div class="row">
       <!-- General Info -->
       <div class="col-12 col-md-4 mb-4">
-        <h5 class="mb-3">About Task Manager</h5>
+        <h5 class="mb-3">{{ 'footer.about.title' | translate }}</h5>
         <p class="text-muted">
-          A simple yet powerful task management solution to help you stay organized and boost productivity.
+          {{ 'footer.about.description' | translate }}
         </p>
         <div class="social-links">
           <a href="#" class="text-muted me-3"><i class="bi bi-github"></i></a>
@@ -59,9 +61,9 @@
 
       <!-- Address -->
       <div class="col-12 col-md-4 mb-4">
-        <h5 class="mb-3">Contact Us</h5>
+        <h5 class="mb-3">{{ 'footer.contact.title' | translate }}</h5>
         <address class="text-muted">
-          <p class="mb-2"><i class="bi bi-geo-alt me-2"></i>123 Task Street</p>
+          <p class="mb-2"><i class="bi bi-geo-alt me-2"></i>{{ 'footer.contact.address' | translate }}</p>
           <p class="mb-2">
             <i class="bi bi-envelope me-2"></i>
             <a href="mailto:info&#64;taskmanager.com" class="text-muted text-decoration-none">info&#64;taskmanager.com</a>
@@ -72,11 +74,11 @@
 
       <!-- Quick Links -->
       <div class="col-12 col-md-4 mb-4">
-        <h5 class="mb-3">Quick Links</h5>
+        <h5 class="mb-3">{{ 'footer.quickLinks.title' | translate }}</h5>
         <ul class="list-unstyled">
-          <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Home</a></li>
+          <li class="mb-2"><a href="#" class="text-muted text-decoration-none">{{ 'footer.quickLinks.home' | translate }}</a></li>
           <li class="mb-2">
-            <a routerLink="/features" class="text-muted text-decoration-none">Features</a>
+            <a routerLink="/features" class="text-muted text-decoration-none">{{ 'footer.quickLinks.features' | translate }}</a>
           </li>
           <li class="mb-2">
             <a routerLink="/privacy-policy" class="text-muted text-decoration-none">Privacy Policy</a>
@@ -96,8 +98,17 @@
 
     <div class="border-top pt-3 mt-3">
       <p class="text-muted text-center mb-0">
-        © {{ currentYear }} Task Manager. All rights reserved.
+        © {{ currentYear }} {{ 'footer.copyright' | translate }}
       </p>
     </div>
   </div>
 </footer>
+
+<!-- Add in header navigation -->
+<nav class="d-flex align-items-center">
+  <select class="form-select me-3" #langSelect (change)="switchLanguage(langSelect.value)">
+    <option value="tr">Türkçe</option>
+    <option value="en">English</option>
+  </select>
+  <!-- existing nav items -->
+</nav>
