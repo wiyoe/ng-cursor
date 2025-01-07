@@ -80,5 +80,62 @@
         "description": "Access your tasks on any device"
       }
     }
+  },
+  "main": {
+    "pageTitle": "Task List",
+    "pageSubtitle": "Manage and organize your tasks efficiently",
+    "addTask": "Add New Task",
+    "filters": {
+      "search": "Search tasks...",
+      "allCategories": "All Categories",
+      "allStatus": "All Status",
+      "completed": "Completed",
+      "active": "Active",
+      "reset": "Reset"
+    },
+    "table": {
+      "task": "Task",
+      "status": "Status",
+      "category": "Category",
+      "created": "Created",
+      "createdBy": "Created By",
+      "actions": "Actions",
+      "noTasks": "No tasks found.",
+      "edit": "Edit",
+      "delete": "Delete"
+    },
+    "dialog": {
+      "create": {
+        "title": "Create New Task",
+        "description": "Task Description",
+        "category": "Category",
+        "selectCategory": "Select Category",
+        "cancel": "Cancel",
+        "create": "Create Task"
+      },
+      "edit": {
+        "title": "Edit Task",
+        "task": "Task",
+        "category": "Category",
+        "cancel": "Cancel",
+        "save": "Save changes"
+      },
+      "delete": {
+        "title": "Confirm Delete",
+        "message": "Are you sure you want to delete this task?",
+        "cancel": "Cancel",
+        "confirm": "Delete"
+      }
+    }
+  },
+  "categories": {
+    "work": "Work",
+    "personal": "Personal",
+    "shopping": "Shopping",
+    "others": "Others",
+    "health": "Health",
+    "education": "Education",
+    "finance": "Finance",
+    "family": "Family"
   }
 } 

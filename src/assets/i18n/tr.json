@@ -80,5 +80,62 @@
         "description": "Görevlerinize herhangi bir cihazdan erişin"
       }
     }
+  },
+  "main": {
+    "pageTitle": "Görev Listesi",
+    "pageSubtitle": "Görevlerinizi verimli bir şekilde yönetin ve organize edin",
+    "addTask": "Yeni Görev Ekle",
+    "filters": {
+      "search": "Görev ara...",
+      "allCategories": "Tüm Kategoriler",
+      "allStatus": "Tüm Durumlar",
+      "completed": "Tamamlandı",
+      "active": "Aktif",
+      "reset": "Sıfırla"
+    },
+    "table": {
+      "task": "Görev",
+      "status": "Durum",
+      "category": "Kategori",
+      "created": "Oluşturulma",
+      "createdBy": "Oluşturan",
+      "actions": "İşlemler",
+      "noTasks": "Görev bulunamadı.",
+      "edit": "Düzenle",
+      "delete": "Sil"
+    },
+    "dialog": {
+      "create": {
+        "title": "Yeni Görev Oluştur",
+        "description": "Görev Açıklaması",
+        "category": "Kategori",
+        "selectCategory": "Kategori Seç",
+        "cancel": "İptal",
+        "create": "Görev Oluştur"
+      },
+      "edit": {
+        "title": "Görevi Düzenle",
+        "task": "Görev",
+        "category": "Kategori",
+        "cancel": "İptal",
+        "save": "Değişiklikleri Kaydet"
+      },
+      "delete": {
+        "title": "Silmeyi Onayla",
+        "message": "Bu görevi silmek istediğinizden emin misiniz?",
+        "cancel": "İptal",
+        "confirm": "Sil"
+      }
+    }
+  },
+  "categories": {
+    "work": "İş",
+    "personal": "Kişisel",
+    "shopping": "Alışveriş",
+    "others": "Diğer",
+    "health": "Sağlık",
+    "education": "Eğitim",
+    "finance": "Finans",
+    "family": "Aile"
   }
 } 

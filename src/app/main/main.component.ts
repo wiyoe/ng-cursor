@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterOutlet, RouterLink, Router } from '@angular/router';
 import { NgFor, NgIf, DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
 
 interface Task {
   text: string;
@@ -16,7 +17,7 @@ interface Task {
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [NgFor, NgIf, FormsModule, DatePipe],
+  imports: [NgFor, NgIf, FormsModule, DatePipe, TranslateModule],
   templateUrl: './main.component.html',
   styleUrl: './main.component.css'
 })
@@ -29,7 +30,16 @@ export class MainComponent implements OnInit {
   
     private fakeUsers = ['Alice', 'Bob', 'Charlie', 'David', 'Eva'];
   
-    categories = ['Work', 'Personal', 'Shopping', 'Health', 'Other'];
+    categories = [
+      'Work',
+      'Personal',
+      'Shopping',
+      'Health',
+      'Education',
+      'Finance',
+      'Family',
+      'Others'
+    ];
   
     editingTask: Task | null = null;
     editingIndex: number = -1;
