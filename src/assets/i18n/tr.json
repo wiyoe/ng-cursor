@@ -21,6 +21,9 @@
     "noTasks": "Görev bulunamadı."
   },
   "branding": {
+    "customerComments": {
+      "title": "Müşterilerimiz Ne Diyor"
+    },
     "title": "Görevleri Düzenleyin",
     "subtitle": "Verimliliği Artırın",
     "description": "İş akışınızı sezgisel görev yönetimi çözümümüzle kolaylaştırın. Organize olun, son teslim tarihlerini yakalayın ve daha fazlasın.",

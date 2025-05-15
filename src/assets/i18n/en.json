@@ -21,6 +21,9 @@
     "noTasks": "No tasks found."
   },
   "branding": {
+    "customerComments": {
+      "title": "What Our Customers Say"
+    },
     "title": "Organize Tasks",
     "subtitle": "Boost Productivity",
     "description": "Streamline your workflow with our intuitive task management solution. Stay organized, meet deadlines, and achieve more.",
