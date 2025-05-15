@@ -36,7 +36,8 @@
   },
   "header": {
     "features": "Features",
-    "faq": "FAQ"
+    "faq": "FAQ",
+    "references": "References"
   },
   "footer": {
     "about": {
@@ -228,6 +229,53 @@
   "common": {
     "buttons": {
       "cancel": "Cancel"
+    }
+  },
+  "references": {
+    "title": "Our References",
+    "companies": {
+      "techSolutions": {
+        "name": "Tech Solutions Inc.",
+        "project": "Enterprise Task Management System",
+        "description": "Implemented a comprehensive task management solution that improved team productivity by 40%.",
+        "contact": "Sarah Johnson",
+        "position": "Project Manager"
+      },
+      "globalInnovations": {
+        "name": "Global Innovations",
+        "project": "Agile Project Tracker",
+        "description": "Developed a custom project tracking system that streamlined workflow processes.",
+        "contact": "Michael Chen",
+        "position": "CTO"
+      },
+      "digitalDynamics": {
+        "name": "Digital Dynamics",
+        "project": "Collaborative Workspace Platform",
+        "description": "Created an intuitive workspace solution that enhanced team collaboration and communication.",
+        "contact": "Emma Davis",
+        "position": "Operations Director"
+      },
+      "smartSystems": {
+        "name": "Smart Systems Ltd.",
+        "project": "Team Collaboration Suite",
+        "description": "Built a comprehensive team collaboration platform that increased cross-team productivity by 35%.",
+        "contact": "Alex Thompson",
+        "position": "Head of Engineering"
+      },
+      "futureTech": {
+        "name": "Future Tech Solutions",
+        "project": "Project Management Dashboard",
+        "description": "Designed and implemented an intuitive project management dashboard with real-time analytics.",
+        "contact": "Maria Rodriguez",
+        "position": "Product Manager"
+      },
+      "innovativeSoftware": {
+        "name": "Innovative Software Co.",
+        "project": "Resource Planning System",
+        "description": "Developed an enterprise resource planning system that optimized resource allocation by 45%.",
+        "contact": "David Kim",
+        "position": "Technical Director"
+      }
     }
   }
 } 

@@ -36,7 +36,8 @@
   },
   "header": {
     "features": "Özellikler",
-    "faq": "SSS"
+    "faq": "SSS",
+    "references": "Referanslar"
   },
   "footer": {
     "about": {
@@ -228,6 +229,53 @@
   "common": {
     "buttons": {
       "cancel": "İptal"
+    }
+  },
+  "references": {
+    "title": "Referanslarımız",
+    "companies": {
+      "techSolutions": {
+        "name": "Tech Solutions Inc.",
+        "project": "Kurumsal Görev Yönetim Sistemi",
+        "description": "Ekip verimliliğini %40 artıran kapsamlı bir görev yönetimi çözümü uyguladık.",
+        "contact": "Sarah Johnson",
+        "position": "Proje Yöneticisi"
+      },
+      "globalInnovations": {
+        "name": "Global Innovations",
+        "project": "Çevik Proje Takip Sistemi",
+        "description": "İş akışı süreçlerini optimize eden özel bir proje takip sistemi geliştirdik.",
+        "contact": "Michael Chen",
+        "position": "CTO"
+      },
+      "digitalDynamics": {
+        "name": "Digital Dynamics",
+        "project": "İşbirliği Çalışma Platformu",
+        "description": "Ekip işbirliğini ve iletişimini geliştiren sezgisel bir çalışma çözümü oluşturduk.",
+        "contact": "Emma Davis",
+        "position": "Operasyon Direktörü"
+      },
+      "smartSystems": {
+        "name": "Smart Systems Ltd.",
+        "project": "Ekip İşbirliği Paketi",
+        "description": "Ekipler arası verimliliği %35 artıran kapsamlı bir işbirliği platformu oluşturduk.",
+        "contact": "Alex Thompson",
+        "position": "Mühendislik Müdürü"
+      },
+      "futureTech": {
+        "name": "Future Tech Solutions",
+        "project": "Proje Yönetim Paneli",
+        "description": "Gerçek zamanlı analizler sunan sezgisel bir proje yönetim paneli tasarladık ve uyguladık.",
+        "contact": "Maria Rodriguez",
+        "position": "Ürün Yöneticisi"
+      },
+      "innovativeSoftware": {
+        "name": "Innovative Software Co.",
+        "project": "Kaynak Planlama Sistemi",
+        "description": "Kaynak tahsisini %45 optimize eden bir kurumsal kaynak planlama sistemi geliştirdik.",
+        "contact": "David Kim",
+        "position": "Teknik Direktör"
+      }
     }
   }
 } 
